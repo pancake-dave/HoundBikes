@@ -1,0 +1,35 @@
+.placeholder {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Rokkitt', serif;
+}
+
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+}
+
+.nav {
+    &__item{
+        font-size: 2.4rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}
+
+.header {
+    &__heading {
+        font-family: 'Rokkitt', serif;
+        font-size: 6.4rem;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        font-size: 2.4rem;
+    }
+}
