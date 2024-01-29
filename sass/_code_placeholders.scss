@@ -106,12 +106,14 @@
         max-width: 1200px;
     }
     &__item {
+        position: relative;
         padding: .5em;
         color: $light-color;
 
         &:last-child {
             padding-right: 0;
         }
+
     }
 }
 

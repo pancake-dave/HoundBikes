@@ -1,6 +1,11 @@
 @use 'colors' as *;
 
 @media(min-width: 768px) {
+
+    .section-padding {
+        padding: 4em 2em;
+    }
+
     .burger-btn {
         display: none;
     }
@@ -22,8 +27,12 @@
         max-width: 1200px;
     }
     &__item {
+        padding: 0.5em;
         &:last-child {
             padding-right: 0;
+        }
+        &::before {
+            display: none;
         }
     }
     }

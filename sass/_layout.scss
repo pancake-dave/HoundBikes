@@ -12,7 +12,7 @@ body {
 }
 
 .section-padding {
-    padding: 4em 2em;
+    padding: 2em 2em;
 }
 
 // HEADER
@@ -92,8 +92,29 @@ body {
         height: 100%;
     }
     &__item {
-        padding: .5em;
+        position: relative;
+        padding: 1em 0;
         color: $light-color;
+
+        &::before {
+            position: absolute;
+            content: '';
+            height: 2px;
+            width: 100%;
+            background-color: $light-color;
+            left: 0;
+            bottom: .5em;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .5s;
+            transition-delay: .15s;
+        }
+    }
+    &__item:hover {
+        &::before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
     }
 }
 

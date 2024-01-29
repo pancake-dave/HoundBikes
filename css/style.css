@@ -71,7 +71,7 @@ body {
 }
 
 .section-padding {
-  padding: 4em 2em;
+  padding: 2em 2em;
 }
 
 .burger-btn {
@@ -140,8 +140,26 @@ body {
   height: 100%;
 }
 .nav__item {
-  padding: 0.5em;
+  position: relative;
+  padding: 1em 0;
   color: #DCD7C9;
+}
+.nav__item::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #DCD7C9;
+  left: 0;
+  bottom: 0.5em;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transition-delay: 0.15s;
+}
+.nav__item:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 .nav-active {
@@ -211,6 +229,9 @@ body {
 }
 
 @media (min-width: 768px) {
+  .section-padding {
+    padding: 4em 2em;
+  }
   .burger-btn {
     display: none;
   }
@@ -228,8 +249,14 @@ body {
     margin: 0 auto;
     max-width: 1200px;
   }
+  .nav__item {
+    padding: 0.5em;
+  }
   .nav__item:last-child {
     padding-right: 0;
+  }
+  .nav__item::before {
+    display: none;
   }
   .header {
     background-image: linear-gradient(135deg, rgba(63, 78, 79, 0.75), rgba(0, 0, 0, 0.75)), url(../img/hero/hero_big.jpg);
