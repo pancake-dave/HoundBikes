@@ -1,25 +1,44 @@
-@use 'colors' as *;
-
-body {
-    background-color: $main-color;
-    height: 200vh;
-}
-
-.wrapper {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
-}
-
-.section-padding {
-    padding: 4em 2em;
-}
-
-// HEADER
-
 .burger-btn {
     position: fixed;
     top: 20px;
+    right: 20px;
+    padding: 1em;
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    z-index: 1000;
+
+    &__box {
+        position: relative;
+        width: 40px;
+        height: 30px;
+    }
+
+    &__bars, 
+    &__bars::after,
+    &__bars::before {
+        position: absolute;
+        right: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $light-color;
+    }
+
+    &__bars {
+        &::after {
+            content: '';
+            top: 14px;
+        }
+        &::before {
+            content: '';
+            top: 28px;
+        }
+    }
+}
+
+.btn-special-animation {
+    position: fixed;
+    top: 100px;
     right: 20px;
     padding: 1em;
     background: none;
@@ -42,7 +61,7 @@ body {
         width: 100%;
         height: 3px;
         background-color: $light-color;
-        transition: top 1s, transform 1s;
+        transition: top .5s, transform .5s;
     }
 
     &__bars {
@@ -55,11 +74,8 @@ body {
             top: 14px;
         }
     }
-}
-
-.burger-btn-animation {
-    .burger-btn__bars {
-        transform: rotate(-45deg);
+    &:hover &__bars {
+            transform: rotate(-45deg);
         &::after {
             content: '';
             top: 0px;
@@ -74,31 +90,29 @@ body {
 }
 
 .nav {
+    display: none;
     position: fixed;
-    right: -110%;
+    align-self: flex-start;
     width: 100%;
-    height: 100%;
-    background-image: $dark-gradient-solid;
+    background-color: $black-80;
     z-index: 10;
-    transition: right 1s;
 
     &__items {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: end;
+        margin: 0 auto;
         padding: 0 2em;
         width: 100%;
-        height: 100%;
+        max-width: 1200px;
     }
     &__item {
         padding: .5em;
         color: $light-color;
-    }
-}
 
-.nav-active {
-    right: 0;
+        &:last-child {
+            padding-right: 0;
+        }
+    }
 }
 
 .header {

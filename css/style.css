@@ -71,30 +71,81 @@ body {
 }
 
 .section-padding {
-  padding: 6em 2em;
+  padding: 4em 2em;
+}
+
+.burger-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1em;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  z-index: 1000;
+}
+.burger-btn__box {
+  position: relative;
+  width: 40px;
+  height: 30px;
+}
+.burger-btn__bars, .burger-btn__bars::after, .burger-btn__bars::before {
+  position: absolute;
+  right: 0;
+  top: 14px;
+  width: 100%;
+  height: 3px;
+  background-color: #DCD7C9;
+  transition: top 1s, transform 1s;
+}
+.burger-btn__bars::before {
+  content: "";
+  top: -14px;
+}
+.burger-btn__bars::after {
+  content: "";
+  top: 14px;
+}
+
+.burger-btn-animation .burger-btn__bars {
+  transform: rotate(-45deg);
+}
+.burger-btn-animation .burger-btn__bars::after {
+  content: "";
+  top: 0px;
+  transform: rotate(-90deg);
+}
+.burger-btn-animation .burger-btn__bars::before {
+  content: "";
+  top: 0px;
+  transform: rotate(-90deg);
 }
 
 .nav {
   position: fixed;
-  align-self: flex-start;
+  right: -110%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  background-image: linear-gradient(135deg, rgb(44, 54, 57), rgb(0, 0, 0));
   z-index: 10;
+  transition: right 1s;
 }
 .nav__items {
   display: flex;
-  justify-content: end;
-  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0 2em;
   width: 100%;
-  max-width: 1200px;
+  height: 100%;
 }
 .nav__item {
   padding: 0.5em;
   color: #DCD7C9;
 }
-.nav__item:last-child {
-  padding-right: 0;
+
+.nav-active {
+  right: 0;
 }
 
 .header {
@@ -125,6 +176,9 @@ body {
   display: block;
   color: #DCD7C9;
   font-size: 4rem;
+}
+.header__logo {
+  display: none;
 }
 
 .placeholder {
@@ -157,6 +211,26 @@ body {
 }
 
 @media (min-width: 768px) {
+  .burger-btn {
+    display: none;
+  }
+  .nav {
+    display: block;
+    align-self: flex-start;
+    right: 0;
+    height: auto;
+    z-index: 10;
+  }
+  .nav__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  .nav__item:last-child {
+    padding-right: 0;
+  }
   .header {
     background-image: linear-gradient(135deg, rgba(63, 78, 79, 0.75), rgba(0, 0, 0, 0.75)), url(../img/hero/hero_big.jpg);
   }
@@ -169,5 +243,11 @@ body {
   .header__heading-container {
     text-align: right;
     order: 1;
+  }
+  .header__logo {
+    display: inline;
+  }
+  .header__logo, .header__heading {
+    vertical-align: middle;
   }
 }/*# sourceMappingURL=style.css.map */

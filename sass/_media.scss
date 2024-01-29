@@ -1,6 +1,33 @@
 @use 'colors' as *;
 
 @media(min-width: 768px) {
+    .burger-btn {
+        display: none;
+    }
+
+    .nav {
+        display: block;
+        // position: fixed;
+        align-self: flex-start;
+        right: 0;
+        // width: 100%;
+        height: auto;
+        z-index: 10;
+
+    &__items {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+    &__item {
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+    }
+
     .header {
         background-image: $dark-gradient, url(../img/hero/hero_big.jpg);
 
@@ -13,6 +40,12 @@
         &__heading-container {
             text-align: right;
             order: 1;
+        }
+        &__logo {
+            display: inline;
+        }
+        &__logo, &__heading {
+            vertical-align: middle;
         }
     }
 }
