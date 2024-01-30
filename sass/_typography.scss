@@ -25,11 +25,50 @@ body {
 .header {
     &__heading {
         font-family: 'Rokkitt', serif;
-        font-size: 6.4rem;
+        font-size: 5.8rem;
         text-transform: uppercase;
     }
 
     &__text {
-        font-size: 2.4rem;
+        font-size: 2rem;
+    }
+}
+
+.models {
+    &__card-img-btn {
+        text-transform: uppercase;
+    }
+}
+
+// MEDIA
+
+@media(min-width: 576px) {
+    .nav {
+        &__item{
+            font-size: 2.8rem;
+        }
+    }
+    
+    .header {
+        &__heading {
+            font-size: 6.4rem;
+        }
+    
+        &__text {
+            font-size: 2.4rem;
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .header {
+        &__heading {
+            font-size: 7.2rem;
+            letter-spacing: .02em;
+        }
+    
+        &__text {
+            font-size: 3.2rem;
+        }
     }
 }

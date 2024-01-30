@@ -1,8 +1,11 @@
 @use 'colors' as *;
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: $main-color;
-    height: 200vh;
 }
 
 .wrapper {
@@ -24,6 +27,8 @@ body {
     padding: 1em;
     background: none;
     border: 1px solid transparent;
+    border-radius: 8px;
+    outline: none;
     cursor: pointer;
     z-index: 1000;
 
@@ -42,7 +47,7 @@ body {
         width: 100%;
         height: 3px;
         background-color: $light-color;
-        transition: top 1s, transform 1s;
+        transition: top .8s, transform .8s;
     }
 
     &__bars {
@@ -97,16 +102,17 @@ body {
         color: $light-color;
 
         &::before {
+            display: none;
             position: absolute;
             content: '';
-            height: 2px;
+            height: 1px;
             width: 100%;
             background-color: $light-color;
             left: 0;
             bottom: .5em;
             transform-origin: right;
             transform: scaleX(0);
-            transition: transform .5s;
+            transition: transform .3s;
             transition-delay: .15s;
         }
     }
@@ -157,3 +163,59 @@ body {
 
     
 } 
+
+// ABOUT-US
+
+.about-us {
+    background-color: $light-color;
+
+    &__box {
+        color: $main-color;
+    }
+
+    &__box-text {
+        text-align: justify;
+    }
+
+    &__text {
+        margin-bottom: 2em;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__img {
+        display: none;
+    }
+}
+
+// MODELS
+
+.models {
+    background-color: $main-color;
+
+    &__card-img {
+        position: relative;
+        width: 75%;
+        height: 600px;
+        background-image: url(../img/cards/gravel.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__card-img-title {
+        padding: 1em;
+        color: $light-color;
+    }
+    &__card-img-btn {
+        position: absolute;
+        bottom: 2em;
+        right: 2em;
+        border: 2px solid $light-color;
+        border-radius: 8px;
+        background-color: transparent;
+        padding: 1em 2em;
+        color: $light-color;
+        cursor: pointer;
+    }
+}

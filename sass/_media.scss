@@ -1,6 +1,6 @@
 @use 'colors' as *;
 
-@media(min-width: 768px) {
+@media(min-width: 992px) {
 
     .section-padding {
         padding: 4em 2em;
@@ -12,29 +12,26 @@
 
     .nav {
         display: block;
-        // position: fixed;
         align-self: flex-start;
         right: 0;
-        // width: 100%;
         height: auto;
         z-index: 10;
 
     &__items {
         display: flex;
         flex-direction: row;
-        justify-content: end;
+        justify-content: flex-end;
+        gap: 1em;
         margin: 0 auto;
         max-width: 1200px;
     }
     &__item {
-        padding: 0.5em;
-        &:last-child {
-            padding-right: 0;
-        }
+        padding: 0.5em 0;
+
         &::before {
-            display: none;
+            display: block;
+            }
         }
-    }
     }
 
     .header {
@@ -55,6 +52,40 @@
         }
         &__logo, &__heading {
             vertical-align: middle;
+        }
+    }
+
+    .about-us {
+        &__box {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__box-img {
+            width: 40%;
+        }
+
+        &__box-text {
+            position: relative;
+            width: 55%;
+        }
+
+        &__text{
+           position: absolute;
+           margin-bottom: 0;
+        }
+
+        &__text--middle {
+            top: 50%;
+        }
+        
+        &__text--bottom {
+            bottom: 0;
+        }
+        
+        &__img {
+            display: block;
+            width: 100%;
         }
     }
 }
