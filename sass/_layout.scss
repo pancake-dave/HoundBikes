@@ -1,4 +1,5 @@
 @use 'colors' as *;
+@use 'mixins' as *;
 
 html {
     scroll-behavior: smooth;
@@ -192,30 +193,129 @@ body {
 // MODELS
 
 .models {
+
     background-color: $main-color;
+
+    &__card__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4em;
+    }
+
+    &__card {
+        position: relative;
+        width: 90%;
+    }
 
     &__card-img {
         position: relative;
-        width: 75%;
-        height: 600px;
-        background-image: url(../img/cards/gravel.jpg);
-        background-position: center;
-        background-size: cover;
+        width: 90%;
+        z-index: 1;
+
+    }
+
+    &__card-img-img {
+        width: 100%;
+        max-height: 600px;
+        object-position: center;
+        object-fit: cover;
     }
 
     &__card-img-title {
-        padding: 1em;
+        position: absolute;
+        top: 2em;
+        left: 2em;
         color: $light-color;
     }
+
     &__card-img-btn {
         position: absolute;
         bottom: 2em;
         right: 2em;
-        border: 2px solid $light-color;
+        border: 2px solid transparent;
         border-radius: 8px;
         background-color: transparent;
-        padding: 1em 2em;
+        padding: 1em 0;
         color: $light-color;
         cursor: pointer;
     }
+
+    &__card-info {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        max-height: 600px;
+        color: $main-color;
+        background-color: $light-color;
+        z-index: 0;
+        // animation: modelCardInfoAnimation 1s 1s forwards;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            height: 20px;
+            width: 100%;
+            background-color: $light-color;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            height: 20px;
+            width: 100%;
+            background-color: $light-color;
+        }
+    }
+
+    &__card-info-btn {
+        position: absolute;
+        right: 0;
+        top: 50%;
+
+    }
+
+    &__card-info-box {
+        position: relative;
+        width: 100%;
+        height: 100px;
+        transition: right 0.5s;
+    }
+
+    &__card-info-title {
+        position: absolute;
+        right: 2em;
+        top: 2em;
+    }
+
+    &__card-info-list {
+        position: absolute;
+        bottom: 0;
+        padding: 2em;
+        list-style: none;
+    }
+
+    &__card-info-list-item {
+        padding-bottom: 1em;
+    }
+
+    &__card-info-desc {
+        position: absolute;
+        top: 5em;
+        padding: 2em;
+
+    }
+
+    &__card-info-list-property {
+        font-weight: bold;
+    }
 }
+
+
+
+    
+    

@@ -122,3 +122,21 @@
     }
   }
   
+
+  // CARD ANIMATIONS (MY OWN)
+
+.models__card-info-animation {
+        animation: modelCardInfoAnimation 1s forwards;
+    }
+
+  @keyframes modelCardInfoAnimation {
+        50% {
+                transform: translateX(100%);
+            }
+        
+        100% {
+                transform: translateX(0);
+                z-index: 1;
+            }
+        }
+

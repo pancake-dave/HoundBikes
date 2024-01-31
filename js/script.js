@@ -2,6 +2,7 @@ const burgerBtn = document.querySelector('.burger-btn')
 const navBar = document.querySelector('.nav')
 const navBarItems = document.querySelectorAll('.nav__item')
 
+
 const handleNav = () => {
     if (burgerBtn.classList.contains('burger-btn-animation')) {
         burgerBtn.classList.remove('burger-btn-animation')

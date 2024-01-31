@@ -19,3 +19,34 @@
 .title-line-light {
         background-color: $light-color;
 }
+
+.button-animation {
+        &::before {
+                position: absolute;
+                content: '';
+                height: 1px;
+                width: 100%;
+                background-color: $light-color;
+                left: 0;
+                bottom: .5em;
+                transform-origin: right;
+                transform: scaleX(0);
+                transition: transform .3s;
+                transition-delay: .15s;
+            }
+
+            &:hover {
+                &::before {
+                        transform-origin: left;
+                        transform: scaleX(1);
+                        }
+            }
+}
+
+.model__card-info--active {
+        right: 0;
+}
+    
+.model__card-info--inactive {
+        right: -110%;
+}
