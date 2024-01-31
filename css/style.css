@@ -310,16 +310,19 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.models__card-img-title {
+.models__card-img-heading {
   position: absolute;
-  top: 2em;
-  left: 2em;
+  left: 0;
+  top: 0;
+  padding: 2em;
+  width: 100%;
+  height: 100%;
+}
+.models__card-img-title {
   color: #DCD7C9;
 }
 .models__card-img-btn {
-  position: absolute;
-  bottom: 2em;
-  right: 2em;
+  position: relative;
   border: 2px solid transparent;
   border-radius: 8px;
   background-color: transparent;
@@ -356,8 +359,46 @@ body {
 }
 .models__card-info-btn {
   position: absolute;
-  right: 0;
+  right: 15px;
   top: 50%;
+  transform: translateY(-50%);
+  padding: 20px 10px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 4.8rem;
+  cursor: pointer;
+}
+.models__card-info-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  border-left: 1px solid #2C3639;
+  border-top: 1px solid #2C3639;
+  transform-origin: top left;
+  transition: transform 0.3s;
+}
+.models__card-info-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  border-right: 1px solid #2C3639;
+  border-bottom: 1px solid #2C3639;
+  transform-origin: bottom right;
+  transition: transform 0.3s;
+}
+.models__card-info-btn:hover::before {
+  transform: scale(1);
+}
+.models__card-info-btn:hover::after {
+  transform: scale(1);
 }
 .models__card-info-box {
   position: relative;
