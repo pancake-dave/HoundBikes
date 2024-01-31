@@ -193,7 +193,7 @@ body {
 // MODELS
 
 .models {
-
+    overflow: hidden;
     background-color: $main-color;
 
     &__card__box {

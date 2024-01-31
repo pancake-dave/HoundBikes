@@ -284,6 +284,7 @@ body {
 }
 
 .models {
+  overflow: hidden;
   background-color: #2C3639;
 }
 .models__card__box {
