@@ -350,6 +350,7 @@ body {
   position: relative;
   width: 90%;
   z-index: 1;
+  overflow: hidden;
 }
 .models__card-img-img {
   width: 100%;
@@ -366,6 +367,10 @@ body {
   padding: 2em;
   width: 100%;
   height: 100%;
+  transition: left 0.5s;
+}
+.models__card-img-heading--active {
+  left: -50%;
 }
 .models__card-img-title {
   color: #DCD7C9;
@@ -378,6 +383,22 @@ body {
   padding: 1em 0;
   color: #DCD7C9;
   cursor: pointer;
+}
+.models__card-img-btn-hide {
+  position: absolute;
+  top: 3em;
+  left: -30%;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: transparent;
+  padding: 1em 0;
+  color: #DCD7C9;
+  cursor: pointer;
+  z-index: 10;
+  transition: left 0.5s;
+}
+.models__card-img-btn-hide--active {
+  left: 2em;
 }
 .models__card-info {
   position: absolute;
@@ -394,7 +415,7 @@ body {
   content: "";
   position: absolute;
   top: -20px;
-  height: 20px;
+  height: 22px;
   width: 100%;
   background-color: #DCD7C9;
 }
@@ -402,7 +423,7 @@ body {
   content: "";
   position: absolute;
   bottom: -20px;
-  height: 20px;
+  height: 22px;
   width: 100%;
   background-color: #DCD7C9;
 }
@@ -451,11 +472,10 @@ body {
   transform: scale(1);
 }
 .models__card-info-btn-chevron {
-  transform: rotate(-360deg);
   transition: transform 0.5s;
 }
 .models__card-info-btn-chevron-active {
-  transform: rotate(-180deg);
+  transform: rotate(180deg);
 }
 .models__card-info-box {
   position: relative;
@@ -521,6 +541,9 @@ body {
 }
 
 .models__card-img-btn {
+  text-transform: uppercase;
+}
+.models__card-img-btn-hide {
   text-transform: uppercase;
 }
 

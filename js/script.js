@@ -6,6 +6,10 @@ const cardImg = document.querySelector('.models__card-img')
 const cardInfo = document.querySelector('.models__card-info')
 const cardInfoBtnIcon = document.querySelector('.models__card-info-btn-chevron')
 const cardInfoBox = document.querySelector('.models__card-info-box') 
+const cardImgHeading = document.querySelector('.models__card-img-heading') 
+const cardImgBtnHide = document.querySelector('.models__card-img-btn-hide') 
+
+
 
 
 const handleNav = () => {
@@ -35,6 +39,8 @@ const handleCard = () => {
             cardInfo.classList.add('models__card-info-animation');
             cardInfoBtnIcon.classList.add('models__card-info-btn-chevron-active');
             cardInfoBox.classList.add('models__card-info-box--active')
+            cardImgHeading.classList.add('models__card-img-heading--active')
+            cardImgBtnHide.classList.add('models__card-img-btn-hide--active')
             cardState = 'animation';
         } 
         else if (cardState === 'animation') {
@@ -44,6 +50,8 @@ const handleCard = () => {
             cardInfo.classList.add('models__card-info-animation-reverse');
             cardInfoBtnIcon.classList.remove('models__card-info-btn-chevron-active');
             cardInfoBox.classList.remove('models__card-info-box--active')
+            cardImgHeading.classList.remove('models__card-img-heading--active')
+            cardImgBtnHide.classList.remove('models__card-img-btn-hide--active')
             cardState = 'reverseAnimation';
         }
         else if (cardState === 'reverseAnimation') {
@@ -53,6 +61,8 @@ const handleCard = () => {
             cardInfo.classList.add('models__card-info-animation');
             cardInfoBtnIcon.classList.add('models__card-info-btn-chevron-active');
             cardInfoBox.classList.add('models__card-info-box--active')
+            cardImgHeading.classList.add('models__card-img-heading--active')
+            cardImgBtnHide.classList.add('models__card-img-btn-hide--active')
             cardState = 'animation';
         }
     };
