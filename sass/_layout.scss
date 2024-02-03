@@ -365,9 +365,16 @@ body {
         right: -100%;
         width: 100%;
         height: 100%;
-        transition: right 0.5s;
+        transition: right 0.5s, opacity .5s;
         background-color: transparent;
+        opacity: 0;
     }
+
+    &__card-info-box--active {
+        right: 0;
+        opacity: 1;
+
+}
 
     &__card-info-title {
         position: absolute;
@@ -397,9 +404,7 @@ body {
         font-weight: bold;
     }
 
-    &__card-info-box--active {
-        right: 0;
-}
+    
 }
 
 
