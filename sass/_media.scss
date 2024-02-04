@@ -1,10 +1,53 @@
 @use 'colors' as *;
 
+
+@media(min-width: 576px) {
+
+    .models {
+        &__card-info-btn {
+            bottom: -58px;
+            padding: .2em 2em;
+        }
+        
+        &__card-info {
+            &::after {
+                bottom: -64px;
+                height: 65px;
+            }
+        }
+    }
+}
+
 @media(min-width: 768px) {
+
     .section-padding {
         padding: 2em 2em;
     }
-    
+
+    .models {
+
+        &__card__box {
+            margin-bottom: 8em;
+        }
+
+        &__card__box-active-small {
+            margin-bottom: 650px;
+        }
+
+        &__card-info-btn {
+            bottom: -95px;
+            padding: .2em 2em;
+        }
+        
+        &__card-info {
+            &::after {
+                bottom: -99px;
+                height: 100px;
+            }
+        }
+
+    }
+
 }
 
 @media(min-width: 992px) {
@@ -190,12 +233,20 @@
         }
     
         &__card-info-btn {
-
-            right: 15px;
+            right: 50%;
             top: 50%;
-            transform: translateY(-50%);
-            padding: 20px 10px;
+            height: 18%;
+            transform: translate(50%, -50%);
+            padding: .2em .2em;
         }
+
+        &__card-info-btn-box {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 20%;
+    }
     
         &__card-info-btn-chevron {
             transform: rotate(0);
@@ -268,3 +319,4 @@
         }
     }
 }
+
