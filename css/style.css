@@ -341,6 +341,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 4em;
+  margin-bottom: 8em;
 }
 .models__card {
   position: relative;
@@ -365,8 +366,6 @@ body {
   left: 0;
   top: 0;
   padding: 2em;
-  width: 100%;
-  height: 100%;
   transition: left 0.5s;
 }
 .models__card-img-heading--active {
@@ -485,10 +484,12 @@ body {
   transition: right 0.5s, opacity 0.5s;
   background-color: transparent;
   opacity: 0;
+  cursor: default;
 }
 .models__card-info-box--active {
   right: 0;
   opacity: 1;
+  cursor: text;
 }
 .models__card-info-title {
   position: absolute;
@@ -511,6 +512,18 @@ body {
 }
 .models__card-info-list-property {
   font-weight: bold;
+}
+.models__road .models__card-img-title {
+  color: #2C3639;
+}
+.models__road .models__card-img-btn {
+  color: #2C3639;
+}
+.models__road .models__card-img-btn-hide {
+  color: #2C3639;
+}
+.models__road .button-animation::before {
+  background-color: #2C3639;
 }
 
 .placeholder {

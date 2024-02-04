@@ -1,13 +1,32 @@
 const burgerBtn = document.querySelector('.burger-btn')
 const navBar = document.querySelector('.nav')
 const navBarItems = document.querySelectorAll('.nav__item')
-const cardBtns = document.querySelectorAll('.models__card-toogle-btn')
-const cardImg = document.querySelector('.models__card-img')
-const cardInfo = document.querySelector('.models__card-info')
-const cardInfoBtnIcon = document.querySelector('.models__card-info-btn-chevron')
-const cardInfoBox = document.querySelector('.models__card-info-box') 
-const cardImgHeading = document.querySelector('.models__card-img-heading') 
-const cardImgBtnHide = document.querySelector('.models__card-img-btn-hide') 
+
+const cardBtnsOne = document.querySelectorAll('.models-card-js-btn-one')
+const cardImgBtnHideOne = document.querySelector('.models-card-js-bt-hide-one') 
+const cardInfoBtnIconOne = document.querySelector('.models-card-js-chevron-one')
+const cardImgOne = document.querySelector('.models-card-js-img-one')
+const cardInfoOne = document.querySelector('.models-card-js-info-one')
+const cardInfoBoxOne = document.querySelector('.models-card-js-info-box-one') 
+const cardImgHeadingOne = document.querySelector('.models-card-js-img-heading-one') 
+
+const cardBtnsTwo = document.querySelectorAll('.models-card-js-btn-two')
+const cardImgBtnHideTwo = document.querySelector('.models-card-js-bt-hide-two') 
+const cardInfoBtnIconTwo = document.querySelector('.models-card-js-chevron-two')
+const cardImgTwo = document.querySelector('.models-card-js-img-two')
+const cardInfoTwo = document.querySelector('.models-card-js-info-two')
+const cardInfoBoxTwo = document.querySelector('.models-card-js-info-box-two') 
+const cardImgHeadingTwo = document.querySelector('.models-card-js-img-heading-two') 
+
+const cardBtnsThree = document.querySelectorAll('.models-card-js-btn-three')
+const cardImgBtnHideThree = document.querySelector('.models-card-js-bt-hide-three') 
+const cardInfoBtnIconThree = document.querySelector('.models-card-js-chevron-three')
+const cardImgThree = document.querySelector('.models-card-js-img-three')
+const cardInfoThree = document.querySelector('.models-card-js-info-three')
+const cardInfoBoxThree = document.querySelector('.models-card-js-info-box-three') 
+const cardImgHeadingThree = document.querySelector('.models-card-js-img-heading-three') 
+
+
 
 
 
@@ -32,7 +51,7 @@ const handleNav = () => {
 
 let cardState = 'initial';
 
-const handleCard = () => {
+const handleCard = (cardBtns, cardImgBtnHide, cardInfoBtnIcon, cardImg, cardInfo, cardInfoBox, cardImgHeading) => {
     const handleClick = () => {
         if (cardState === 'initial') {
             cardImg.classList.add('models__card-img-animation');
@@ -75,4 +94,6 @@ const handleCard = () => {
 
 
 burgerBtn.addEventListener('click', handleNav)
-handleCard()
+handleCard(cardBtnsOne, cardImgBtnHideOne, cardInfoBtnIconOne, cardImgOne, cardInfoOne, cardInfoBoxOne, cardImgHeadingOne)
+handleCard(cardBtnsTwo, cardImgBtnHideTwo, cardInfoBtnIconTwo, cardImgTwo, cardInfoTwo, cardInfoBoxTwo, cardImgHeadingTwo)
+handleCard(cardBtnsThree, cardImgBtnHideThree, cardInfoBtnIconThree, cardImgThree, cardInfoThree, cardInfoBoxThree, cardImgHeadingThree)
