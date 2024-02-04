@@ -201,3 +201,33 @@
                 z-index: 1;
             }
         }
+
+// // CARD ANIMATIONS - SMALL DEVICES
+
+// .models__card-info-animation-small {
+//         animation: modelCardInfoAnimationVertical .7s forwards;
+//     }
+
+//   @keyframes modelCardInfoAnimationVertical {
+//         0% {
+//                 transform: translateY(0);
+//         }
+
+//         100% {
+//                 transform: translateY(100%);
+//             }
+//         }
+
+// .models__card-info-animation-reverse-small {
+//         animation: modelCardInfoAnimationReverseVertical .7s forwards;
+//     }
+
+//   @keyframes modelCardInfoAnimationReverseVertical {
+//         0% {
+//                 transform: translateY(100%);
+//         }
+//         100% {
+//                 transform: translateY(0);
+//             }
+//         }
+

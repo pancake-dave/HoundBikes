@@ -2,6 +2,10 @@ const burgerBtn = document.querySelector('.burger-btn')
 const navBar = document.querySelector('.nav')
 const navBarItems = document.querySelectorAll('.nav__item')
 
+const cardBoxOne = document.querySelector('.models-card-js-box-one')
+const cardBoxTwo = document.querySelector('.models-card-js-box-two')
+const cardBoxThree = document.querySelector('.models-card-js-box-three')
+
 const cardBtnsOne = document.querySelectorAll('.models-card-js-btn-one')
 const cardImgBtnHideOne = document.querySelector('.models-card-js-bt-hide-one') 
 const cardInfoBtnIconOne = document.querySelector('.models-card-js-chevron-one')
@@ -49,10 +53,51 @@ const handleNav = () => {
 
 }
 
+let cardStateSmall = 'initial';
+
+const handleCardSmall= (cardBtns, cardInfoBtnIcon, cardInfo, cardInfoBox, cardBox) => {
+    const handleClick = () => {
+        if (window.innerWidth > 992) {
+            return;
+        }
+        if (cardState === 'initial') {
+            cardBox.classList.add('models__card__box-active-small')
+            cardInfo.classList.add('models__card-info-active-small');
+            cardInfoBtnIcon.classList.add('models__card-info-btn-chevron-active');
+            cardInfoBox.classList.add('models__card-info-box--active')
+            cardState = 'animation';
+        } 
+        else if (cardState === 'animation') {
+            cardBox.classList.remove('models__card__box-active-small')
+            cardInfo.classList.remove('models__card-info-active-small');
+            cardInfoBtnIcon.classList.remove('models__card-info-btn-chevron-active');
+            cardInfoBox.classList.remove('models__card-info-box--active')
+            cardState = 'reverseAnimation';
+        }
+        else if (cardState === 'reverseAnimation') {
+            cardBox.classList.add('models__card__box-active-small')
+            cardInfo.classList.add('models__card-info-active-small');
+            cardInfoBtnIcon.classList.add('models__card-info-btn-chevron-active');
+            cardInfoBox.classList.add('models__card-info-box--active')
+            cardState = 'animation';
+        }
+    };
+
+    cardBtns.forEach(item => {
+        item.removeEventListener('click', handleClick);
+        item.addEventListener('click', handleClick);
+    });
+
+}
+
+
 let cardState = 'initial';
 
 const handleCard = (cardBtns, cardImgBtnHide, cardInfoBtnIcon, cardImg, cardInfo, cardInfoBox, cardImgHeading) => {
     const handleClick = () => {
+        if (window.innerWidth < 992) {
+            return;
+        }
         if (cardState === 'initial') {
             cardImg.classList.add('models__card-img-animation');
             cardInfo.classList.add('models__card-info-animation');
@@ -97,3 +142,9 @@ burgerBtn.addEventListener('click', handleNav)
 handleCard(cardBtnsOne, cardImgBtnHideOne, cardInfoBtnIconOne, cardImgOne, cardInfoOne, cardInfoBoxOne, cardImgHeadingOne)
 handleCard(cardBtnsTwo, cardImgBtnHideTwo, cardInfoBtnIconTwo, cardImgTwo, cardInfoTwo, cardInfoBoxTwo, cardImgHeadingTwo)
 handleCard(cardBtnsThree, cardImgBtnHideThree, cardInfoBtnIconThree, cardImgThree, cardInfoThree, cardInfoBoxThree, cardImgHeadingThree)
+
+handleCardSmall(cardBtnsOne, cardInfoBtnIconOne, cardInfoOne, cardInfoBoxOne, cardBoxOne)
+handleCardSmall(cardBtnsTwo, cardInfoBtnIconTwo, cardInfoTwo, cardInfoBoxTwo, cardBoxTwo)
+handleCardSmall(cardBtnsThree, cardInfoBtnIconThree, cardInfoThree, cardInfoBoxThree, cardBoxThree)
+
+
