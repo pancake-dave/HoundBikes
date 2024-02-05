@@ -206,5 +206,11 @@
     
         }
     }
+
+    .completed-projects {
+        &__card {
+            margin: 0 .8em;
+        }
+    }
 }
 

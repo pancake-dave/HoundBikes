@@ -156,9 +156,6 @@ body {
   display: none;
 }
 
-.about-us {
-  background-color: #DCD7C9;
-}
 .about-us__box {
   color: #2C3639;
 }
@@ -197,6 +194,10 @@ body {
 }
 
 .title-line-light {
+  background-color: #DCD7C9;
+}
+
+.section-light {
   background-color: #DCD7C9;
 }
 
@@ -404,6 +405,27 @@ body {
 }
 .models__road .button-animation::before {
   background-color: #2C3639;
+}
+
+.completed-projects__card {
+  width: 100%;
+  margin: 0.5em;
+  position: relative;
+  transition: transform 0.3s, margin 0.3s;
+}
+.completed-projects__card-img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.completed-projects__card-title {
+  position: absolute;
+  bottom: 0.5em;
+  left: 1em;
+}
+
+.slick-current {
+  z-index: 5;
 }
 
 /* ----------------------------------------------
@@ -822,5 +844,8 @@ body {
     right: 0;
     opacity: 1;
     cursor: text;
+  }
+  .completed-projects__card {
+    margin: 0 0.8em;
   }
 }/*# sourceMappingURL=style.css.map */

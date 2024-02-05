@@ -20,6 +20,10 @@
         background-color: $light-color;
 }
 
+.section-light {
+    background-color: $light-color;
+}
+
 .button-animation {
         &::before {
                 position: absolute;
@@ -237,3 +241,26 @@
             }
         }
     }
+
+
+    .completed-projects {
+        &__card {
+            width: 100%;
+            margin: .5em;
+            position: relative;
+            transition: transform .3s, margin .3s;
+        }
+        &__card-img {
+            width: 100%;
+            object-fit: cover;
+        }
+        &__card-title {
+            position: absolute;
+            bottom: 0.5em;
+            left: 1em;
+        }
+    }
+
+.slick-current {
+    z-index: 5;
+}
