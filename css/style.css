@@ -769,6 +769,9 @@ body {
     margin-top: 4em;
     margin-bottom: 8em;
   }
+  .models__card__box:last-child {
+    margin-bottom: 0;
+  }
   .models__card-img {
     width: 90%;
   }
