@@ -58,6 +58,22 @@ body {
     }
 }
 
+.contact {
+    &__form-label {
+        text-transform: uppercase;
+    }
+    &__form-input {
+        font-size: 1.6rem;
+    }
+    &__form-textarea {
+        font-size: 1.6rem;
+    }
+    &__form-btn {
+        text-transform: uppercase;
+        font-size: 1.6rem;
+    }
+}
+
 // MEDIA
 
 @media(min-width: 576px) {
