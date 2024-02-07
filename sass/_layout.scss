@@ -201,13 +201,24 @@ body {
         color: $light-color;
     }
     &__social {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 1em;
+        color: $light-color;
         order: 1;
+    }
+    &__social-item {
+        display: block;
+        margin-bottom: 1em;
+        text-decoration: none;
+        color: $light-color;
     }
     &__form {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 1em;
     }
     &__form-label {
         width: 100%;
@@ -272,5 +283,7 @@ body {
             }
         }
     }
+
+
 }
     

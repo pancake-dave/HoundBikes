@@ -15,6 +15,12 @@
             }
         }
     }
+    .contact {
+        &__social {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
 }
 
 @media(min-width: 768px) {
@@ -39,12 +45,17 @@
             }
         }
     }
+    .contact {
+        &__social {
+            justify-content: space-around;
+        }
+    }
 
 }
 
 @media(min-width: 992px) {
     html {
-        scroll-padding-top: 62px;
+        scroll-padding-top: 63px;
     }
     .section-padding {
         padding: 4em 2em;
