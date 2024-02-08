@@ -75,6 +75,9 @@ body {
     &__social-item {
         font-size: 1.6rem;
     }
+    i {
+        font-size: 1.8rem;
+    }
 }
 
 // MEDIA
@@ -153,4 +156,25 @@ body {
             font-size: 2rem;
         }
     }
+    .contact {
+        &__form-label {
+            font-size: 1.8rem;
+        }
+        &__form-input {
+            font-size: 1.8rem;
+        }
+        &__form-textarea {
+            font-size: 1.8rem;
+        }
+        &__form-btn {
+            font-size: 1.8rem;
+        }
+        &__social-item {
+            font-size: 1.8rem;
+        }
+    i {
+        font-size: 2rem;
+    }
+    }
 }
+

@@ -4,8 +4,11 @@
 @media(min-width: 576px) {
 
     .models {
+        &__card-info-btn-box {
+            bottom: -66px;
+                height: 66px;
+        }
         &__card-info-btn {
-            bottom: -58px;
             padding: .2em 2em;
         }
         &__card-info {
@@ -34,8 +37,11 @@
         &__card__box-active-small {
             margin-bottom: 650px;
         }
+        &__card-info-btn-box {
+            bottom: -100px;
+            height: 100px;
+        }
         &__card-info-btn {
-            bottom: -95px;
             padding: .2em 2em;
         }
         &__card-info {
@@ -182,6 +188,13 @@
                 height: 22px;
             }
         }
+        &__card-info-btn-box {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 20%;
+        }
         &__card-info-btn {
             right: 50%;
             top: 50%;
@@ -189,13 +202,6 @@
             transform: translate(50%, -50%);
             padding: .2em .2em;
         }
-        &__card-info-btn-box {
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 20%;
-    }
         &__card-info-btn-chevron {
             transform: rotate(0);
         }
@@ -226,5 +232,47 @@
             margin: 0 .8em;
         }
     }
+    
 }
 
+@media (min-width: 1200px) {
+    .title-line {
+        width: 80%;
+    }
+    .models {
+    &__card-info-btn {
+        &::before {
+            transform: scale(0);
+        }
+        &::after {
+            transform: scale(0);
+        }
+    }
+    }
+    .contact {
+        &__box {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            color: $light-color;
+        }
+        &__social {
+            order: 0;
+        }
+        &__social-box-left {
+            margin-right: 1em;
+        }
+        &__form-box {
+            width: 50%;
+        }
+        &__form-btn {
+            &::before {
+                transform: scale(0);
+            }
+            &::after {
+                transform: scale(0);
+            }
+        }
+    }
+}
