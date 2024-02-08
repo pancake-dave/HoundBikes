@@ -1,3 +1,5 @@
+@use 'colors' as *;
+
 .placeholder {
     font-family: 'Montserrat', sans-serif;
     font-family: 'Rokkitt', serif;
@@ -175,6 +177,14 @@ body {
     i {
         font-size: 2rem;
     }
+    }
+} 
+
+.footer {
+    &__text {
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: $light-color;
     }
 }
 

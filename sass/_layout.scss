@@ -286,4 +286,14 @@ body {
         }
     }
 }
+
+.footer {
+    text-align: center;
+    .title-line {
+        width: 100%;
+    }
+    &__text {
+        margin: 2em
+    }
+}
     

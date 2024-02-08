@@ -30,6 +30,8 @@ const cardInfoThree = document.querySelector('.models-card-js-info-three')
 const cardInfoBoxThree = document.querySelector('.models-card-js-info-box-three') 
 const cardImgHeadingThree = document.querySelector('.models-card-js-img-heading-three') 
 
+const footerYear = document.querySelector('.footer__year')
+
 
 
 
@@ -137,7 +139,13 @@ const handleCard = (cardBtns, cardImgBtnHide, cardInfoBtnIcon, cardImg, cardInfo
     });
 };
 
+const handleCurrentYear = () => {
+    const year = (new Date).getFullYear();
+    footerYear.innerText = year;
+}
 
+
+handleCurrentYear();
 burgerBtn.addEventListener('click', handleNav)
 handleCard(cardBtnsOne, cardImgBtnHideOne, cardInfoBtnIconOne, cardImgOne, cardInfoOne, cardInfoBoxOne, cardImgHeadingOne)
 handleCard(cardBtnsTwo, cardImgBtnHideTwo, cardInfoBtnIconTwo, cardImgTwo, cardInfoTwo, cardInfoBoxTwo, cardImgHeadingTwo)
