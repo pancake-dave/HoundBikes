@@ -199,6 +199,9 @@ body {
   text-decoration: none;
   color: #DCD7C9;
 }
+.contact i, .contact p {
+  vertical-align: middle;
+}
 .contact__form-box {
   display: flex;
   flex-direction: column;
@@ -577,7 +580,7 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(-45px);
     animation-timing-function: ease-out;
     opacity: 1;
   }

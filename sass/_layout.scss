@@ -213,6 +213,9 @@ body {
         text-decoration: none;
         color: $light-color;
     }
+    i, p {
+        vertical-align: middle;
+    }
     &__form-box {
         display: flex;
         flex-direction: column;
@@ -221,7 +224,6 @@ body {
     &__form {
         text-align-last: center;
     }
-
     &__form-input {
         width: 100%;
         height: 2em;
