@@ -1,6 +1,5 @@
 @use 'colors' as *;
 
-
 @media(min-width: 576px) {
     .models {
         &__card-info-btn-box {
@@ -207,7 +206,7 @@
         
         &__card-info-btn-chevron-active {
             transform: rotate(180deg);
-    }
+        }
         &__card-info-box {
             position: relative;
             right: -100%;
@@ -225,7 +224,6 @@
     
         }
     }
-
     .completed-projects {
         &__card {
             margin: 0 .8em;
@@ -239,14 +237,14 @@
         width: 80%;
     }
     .models {
-    &__card-info-btn {
-        &::before {
-            transform: scale(0);
+        &__card-info-btn {
+            &::before {
+                transform: scale(0);
+            }
+            &::after {
+                transform: scale(0);
+            }
         }
-        &::after {
-            transform: scale(0);
-        }
-    }
     }
     .contact {
         &__box {
