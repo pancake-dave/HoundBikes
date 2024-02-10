@@ -1,13 +1,5 @@
 @use 'colors' as *;
-
-.section-title {
-      font-size: 2.4rem;
-      color: $main-color;  
-}
-
-.section-title-light {
-        color: $light-color;
-}
+@use 'mixins' as *;
 
 .title-line {
         height: 1px;
@@ -45,6 +37,74 @@
                         }
             }
 }
+
+// HEADER UNIQUE COMPONENTS
+
+.burger-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1em;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+    &:focus {
+        outline: 1px solid rgba(255, 255, 255, .6);    
+    }
+    &__box {
+        position: relative;
+        width: 40px;
+        height: 30px;
+    }
+    &__bars, 
+    &__bars::after,
+    &__bars::before {
+        position: absolute;
+        right: 0;
+        top: 14px;
+        width: 100%;
+        height: 3px;
+        background-color: $light-color;
+        transition: top .8s, transform .8s;
+    }
+    &__bars {
+        &::before {
+            content: '';
+            top: -14px;
+        }
+        &::after {
+            content: '';
+            top: 14px;
+        }
+    }
+}
+
+.black-bars-color {
+    background-color: $main-color;
+    &::before, &::after {
+        background-color: $main-color;
+    }
+}
+
+.burger-btn-animation {
+    .burger-btn__bars {
+        transform: rotate(-45deg);
+        &::after {
+            content: '';
+            top: 0px;
+            transform: rotate(-90deg);
+        }
+        &::before {
+            content: '';
+            top: 0px;
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+//MODELS UNIQUE COMPONENTS
 
 .models {
         &__card__box {
@@ -148,54 +208,27 @@
             top: 50%;
             transform: translate(50%, -50%);
             padding: .3em 2em;
-            background-color: transparent;
-            border: 1px solid transparent;
             font-size: 4.8rem;
             cursor: pointer;
             z-index: 10;
+            @include box-button_animation_components;
+            @include box-button-base;
             &::before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                transform: scale(1);
                 border-left: 1px solid $main-color;
                 border-top: 1px solid $main-color;
-                transform-origin: top left;
-                transition: transform .5s;
             }
             &::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                transform: scale(1);
                 border-right: 1px solid $main-color;
                 border-bottom: 1px solid $main-color;
-                transform-origin: bottom right;
-                transition: transform .5s;
-            }
-            &:hover {
-                &::before {
-                    transform: scale(1);
-                }
-                &::after {
-                    transform: scale(1);
-                }
             }
         }
-    
         &__card-info-btn-chevron {
             transform: rotate(90deg);
             transition: transform .5s;
         }
         &__card-info-btn-chevron-active {
             transform: rotate(270deg);
-    }
+        }
         &__card-info-box {
             position: relative;
             width: 100%;
@@ -209,7 +242,7 @@
             opacity: 1;
             cursor: text;
     
-    }
+        }
         &__card-info-title {
             position: absolute;
             right: 2em;
@@ -249,6 +282,7 @@
         }
     }
 
+// COMPLETED PROJECTS UNIQUE COMPONENTS
 
     .completed-projects {
         &__card {
@@ -268,6 +302,17 @@
         }
     }
 
-.slick-current {
-    z-index: 5;
-}
+// CONTACT
+
+    .contact {
+        &__form-btn {
+            position: relative;
+            width: 250px;
+            margin-bottom: 1em;
+            padding: 1em 0;
+            color: $light-color;
+            cursor: pointer;
+            @include box-button_animation_components;
+            @include box-button-base;
+        }
+    }

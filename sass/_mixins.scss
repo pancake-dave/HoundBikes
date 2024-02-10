@@ -1,1 +1,43 @@
 @use 'colors' as *;
+
+@mixin box-button_animation_components {
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: scale(1);
+        border-left: 1px solid $light-color;
+        border-top: 1px solid $light-color;
+        transform-origin: top left;
+        transition: transform .5s;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: scale(1);
+        border-right: 1px solid $light-color;
+        border-bottom: 1px solid $light-color;
+        transform-origin: bottom right;
+        transition: transform .5s;
+    }
+    &:hover {
+        &::before {
+            transform: scale(1);
+        }
+        &::after {
+            transform: scale(1);
+        }
+    }
+}
+
+@mixin box-button-base {
+    border: 1px solid transparent;
+    background-color: transparent;
+}

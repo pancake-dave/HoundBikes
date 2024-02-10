@@ -14,6 +14,15 @@ body {
     font-size: 1.6rem;
 }
 
+.section-title {
+    font-size: 2.4rem;
+    color: $main-color;  
+}
+
+.section-title-light {
+    color: $light-color;
+}
+
 .nav {
     &__item{
         font-size: 2.4rem;
@@ -27,10 +36,13 @@ body {
         font-family: 'Rokkitt', serif;
         font-size: 5.8rem;
         text-transform: uppercase;
+        color: $light-color;
     }
     &__text {
         font-size: 2rem;
+        color: $light-color;
     }
+
 }
 
 .models {
@@ -76,6 +88,8 @@ body {
     }
     &__social-item {
         font-size: 1.6rem;
+        text-decoration: none;
+        color: $light-color;
     }
     i {
         font-size: 1.8rem;

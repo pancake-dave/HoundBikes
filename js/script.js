@@ -1,4 +1,5 @@
 const burgerBtn = document.querySelector('.burger-btn')
+const navBtnBars = document.querySelector('.burger-btn__bars')
 const navBar = document.querySelector('.nav')
 const navBarItems = document.querySelectorAll('.nav__item')
 
@@ -31,11 +32,7 @@ const cardInfoBoxThree = document.querySelector('.models-card-js-info-box-three'
 const cardImgHeadingThree = document.querySelector('.models-card-js-img-heading-three') 
 
 const footerYear = document.querySelector('.footer__year')
-
-
-
-
-
+const allSections = document.querySelectorAll('.section')
 
 const handleNav = () => {
     if (burgerBtn.classList.contains('burger-btn-animation')) {
@@ -52,36 +49,51 @@ const handleNav = () => {
             burgerBtn.classList.remove('burger-btn-animation')
         })
     })
-
 }
 
-let cardStateSmall = 'initial';
+const handleObserver = () => {
+    const currentSection = window.scrollY;
+    allSections.forEach(section => {
+        if (section.classList.contains('section-light') && section.offsetTop <= currentSection + 62) {
+            navBtnBars.classList.add('black-bars-color')
+        } else if (!section.classList.contains('section-light') && section.offsetTop <= currentSection + 62) {
+            navBtnBars.classList.remove('black-bars-color')
+        }
+    })
+}
 
-const handleCardSmall= (cardBtns, cardInfoBtnIcon, cardInfo, cardInfoBox, cardBox) => {
+let cardStatesSmall = {
+    one: 'initial',
+    two: 'initial',
+    three: 'initial',
+};
+
+const handleCardSmall= (cardKey, cardBtns, cardInfoBtnIcon, cardInfo, cardInfoBox, cardBox) => {
+    let cardStateSmall = cardStatesSmall[cardKey];
     const handleClick = () => {
         if (window.innerWidth > 992) {
             return;
         }
-        if (cardState === 'initial') {
+        if (cardStateSmall === 'initial') {
             cardBox.classList.add('models__card__box-active-small')
             cardInfo.classList.add('models__card-info-active-small');
             cardInfoBtnIcon.classList.add('models__card-info-btn-chevron-active');
             cardInfoBox.classList.add('models__card-info-box--active')
-            cardState = 'animation';
+            cardStateSmall = 'animation';
         } 
-        else if (cardState === 'animation') {
+        else if (cardStateSmall === 'animation') {
             cardBox.classList.remove('models__card__box-active-small')
             cardInfo.classList.remove('models__card-info-active-small');
             cardInfoBtnIcon.classList.remove('models__card-info-btn-chevron-active');
             cardInfoBox.classList.remove('models__card-info-box--active')
-            cardState = 'reverseAnimation';
+            cardStateSmall = 'reverseAnimation';
         }
-        else if (cardState === 'reverseAnimation') {
+        else if (cardStateSmall === 'reverseAnimation') {
             cardBox.classList.add('models__card__box-active-small')
             cardInfo.classList.add('models__card-info-active-small');
             cardInfoBtnIcon.classList.add('models__card-info-btn-chevron-active');
             cardInfoBox.classList.add('models__card-info-box--active')
-            cardState = 'animation';
+            cardStateSmall = 'animation';
         }
     };
 
@@ -92,11 +104,16 @@ const handleCardSmall= (cardBtns, cardInfoBtnIcon, cardInfo, cardInfoBox, cardBo
 
 }
 
+let cardStates = {
+    one: 'initial',
+    two: 'initial',
+    three: 'initial',
+};
 
-let cardState = 'initial';
-
-const handleCard = (cardBtns, cardImgBtnHide, cardInfoBtnIcon, cardImg, cardInfo, cardInfoBox, cardImgHeading) => {
+const handleCard = (cardKey, cardBtns, cardImgBtnHide, cardInfoBtnIcon, cardImg, cardInfo, cardInfoBox, cardImgHeading) => {
+    let cardState = cardStates[cardKey];
     const handleClick = () => {
+
         if (window.innerWidth < 992) {
             return;
         }
@@ -147,12 +164,14 @@ const handleCurrentYear = () => {
 
 handleCurrentYear();
 burgerBtn.addEventListener('click', handleNav)
-handleCard(cardBtnsOne, cardImgBtnHideOne, cardInfoBtnIconOne, cardImgOne, cardInfoOne, cardInfoBoxOne, cardImgHeadingOne)
-handleCard(cardBtnsTwo, cardImgBtnHideTwo, cardInfoBtnIconTwo, cardImgTwo, cardInfoTwo, cardInfoBoxTwo, cardImgHeadingTwo)
-handleCard(cardBtnsThree, cardImgBtnHideThree, cardInfoBtnIconThree, cardImgThree, cardInfoThree, cardInfoBoxThree, cardImgHeadingThree)
+window.addEventListener('scroll', handleObserver)
 
-handleCardSmall(cardBtnsOne, cardInfoBtnIconOne, cardInfoOne, cardInfoBoxOne, cardBoxOne)
-handleCardSmall(cardBtnsTwo, cardInfoBtnIconTwo, cardInfoTwo, cardInfoBoxTwo, cardBoxTwo)
-handleCardSmall(cardBtnsThree, cardInfoBtnIconThree, cardInfoThree, cardInfoBoxThree, cardBoxThree)
+handleCard('one', cardBtnsOne, cardImgBtnHideOne, cardInfoBtnIconOne, cardImgOne, cardInfoOne, cardInfoBoxOne, cardImgHeadingOne)
+handleCard('two', cardBtnsTwo, cardImgBtnHideTwo, cardInfoBtnIconTwo, cardImgTwo, cardInfoTwo, cardInfoBoxTwo, cardImgHeadingTwo)
+handleCard('three', cardBtnsThree, cardImgBtnHideThree, cardInfoBtnIconThree, cardImgThree, cardInfoThree, cardInfoBoxThree, cardImgHeadingThree)
+
+handleCardSmall('one' ,cardBtnsOne, cardInfoBtnIconOne, cardInfoOne, cardInfoBoxOne, cardBoxOne)
+handleCardSmall('two' ,cardBtnsTwo, cardInfoBtnIconTwo, cardInfoTwo, cardInfoBoxTwo, cardBoxTwo)
+handleCardSmall('three' ,cardBtnsThree, cardInfoBtnIconThree, cardInfoThree, cardInfoBoxThree, cardBoxThree)
 
 
